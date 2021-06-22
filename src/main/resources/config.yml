@@ -1,0 +1,63 @@
+# 默认玩家拥有多长时间的庇护
+default: 300
+# 默认玩家保护时间 对应 下面提示的 %time% 变量
+defaultDisplay: "5分钟"
+
+  # 拥有指定权限的玩家  庇佑的时长
+  # 下面这个示例是 拥有 player.vip   权限的玩家 拥有  600 秒的庇佑时长
+  #   用 冒号隔开了
+  # 这三个 第一个是权限
+  # 第二个(600) 是时长秒为单位
+#  第三个(10分钟) 是 显示在 神兽刷新提示的语句里的 对应下面的 %time% 变量
+permission:
+  - "player.vip:600:10分钟"
+
+msg:
+  spawn:
+    - "§e神兽刷新提示玩家%player%附近刷新神兽%pokemon_name%，保护时间为 %time%"
+  time_out:
+    - "§e玩家%player%的神兽%pokemon_name%庇护时间已过，其他玩家可在坐标 %pokemon_x%,%pokemon_y%,%pokemon_z%的地方捕捉"
+    - "第二行"
+  limit: "§f当前精灵被庇佑中你无法捕捉,庇佑时间剩余: %limit_end_time% 分钟"
+  trust: "成功设置%trust_name%为你的信任玩家"
+  trust_remove: "成功删除信任玩家 %trust_name%"
+  hover_color: "§e"
+  hover:
+    - "&f"
+    - "&a ▶ &b等级: &f%Level% "
+    - "&a ▶ &b个体信息&f(&e进度: &f%IVS_SUM%&f)"
+    - "&f  ▪ &a血量:&f %IVS_HP% &a攻击:&f %IVS_Attack%"
+    - "&f  ▪ &a速度:&f %IVS_Speed% &a防御:&f %IVS_Defence%"
+    - "&f  ▪ &a特攻:&f %IVS_SpecialAttack% &a特防:&f %IVS_SpecialDefence%"
+    - "&a ▶ &b努力值信息&f(&e进度: &f%EVS_SUM%&f)"
+    - "&f  ▪ &a血量:&f %EVS_HP% &a攻击:&f %EVS_Attack%"
+    - "&f  ▪ &a速度:&f %EVS_Speed% &a防御:&f %EVS_Defence%"
+    - "&f  ▪ &a特攻:&f %EVS_SpecialAttack% &a特防:&f %EVS_SpecialDefence%"
+    - "&a ▶ &b基础信息:"
+    - "&f  ▪ &a闪光: &f%Shiny%"
+    - "&f  ▪ &a特性: &f%Ability%"
+    - "&f  ▪ &a性格: &f%Nature%"
+    - "&f  ▪ &a体型: &f%Growth%"
+    - "&f  ▪ &a性别: &f%Gender%"
+    - "&f  ▪ &a昵称: &f%Nick_Name%"
+    - "&a ▶ &b技能信息:"
+    - "&f  ▪ &a一技能: &f%Move1%"
+    - "&f  ▪ &a二技能: &f%Move2%"
+    - "&f  ▪ &a三技能: &f%Move3%"
+    - "&f  ▪ &a四技能: &f%Move4%"
+
+# 命令
+#   给予额外的庇护时长(OP命令) /lg add 玩家名字 守护时间(秒) 给予时间(秒) 时间显示名字
+#   例子: /lg add Laotou 1200 604800 10分钟
+#
+#   设置一个信任玩家(玩家命令) /lg trust 玩家名字
+#   删除你的信任玩家(玩家命令) /lg remove
+#
+#   PAPI变量:
+#
+#   当前的类型 如果有 扩展包 则显示最后一个扩展包的时长:  %lg_point_time%
+#   这个时长 如果为 -1 或者 是通过权限设置的 或者 默认的 则都显示为 永久 有自定义时长的 则显示 到期时间
+#
+#   当前能庇护的时长 %lg_point_limit%
+#   这个庇佑时长就是 刷神兽提示里的那个 保护时间的 %time% 变量
+#

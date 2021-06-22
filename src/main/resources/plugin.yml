@@ -1,0 +1,11 @@
+name: LegendaryGuard
+version: ${project.version}
+main: lt.legendaryguard.LegendaryGuard
+author: Laotou-QQ18922569
+softdepend:
+  - PlaceholderAPI
+  - PokemonAPI
+commands:
+  lg:
+    aliases: [lg]
+    description: 神兽护佑
